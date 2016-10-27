@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 	<head>
 		@include('layouts.main-layout-head')
 	</head>
+
 	<body>
-		<div id="wrapper">
+		<div id="body-bg">
 			@include('layouts.main-layout-header')
 			@include('layouts.main-layout-menu')
-			@yield('content')
+			
+			<div id="content">
+				<div class="container background-white">
+					<div class="row margin-vert-40">
+						@yield('content')
+					</div>
+				</div>
+			</div>
 			@include('layouts.main-layout-footer')
 		</div>
 	</body>

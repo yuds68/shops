@@ -1,42 +1,49 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{{ \Config::get('constants.COMPANY') }}</title>
-		
-		<link href="{{ url('resources/assets/css/bootstrap.css') }}" rel="stylesheet" />
-		<link href="{{ url('resources/assets/css/font-awesome.css') }}" rel="stylesheet" />
+		@include('layouts.main-layout-head')
 	</head>
 	
-	<body style="background-color: #E2E2E2;">
-		<div class="container">
-			<div class="row text-center " style="padding-top:100px;">
-				<div class="col-md-12">
-					<h1>{{ \Config::get('constants.COMPANY') }}</h1>
-				</div>
-			</div>
+	<body>
+		<div id="body-bg">
+			@include('layouts.main-layout-header')
 			
-			<div class="row ">
-				<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-					<div class="panel-body">
-						<form role="form">
-							<hr />
-							<div class="form-group input-group">
-								<span class="input-group-addon"><i class="fa fa-tag"></i></span>
-								<input type="text" class="form-control" placeholder="Your Username " />
+			<div id="content">
+				<div class="container background-white">
+					<div class="container">
+						<div class="row margin-vert-30">
+							<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+								<form class="login-page">
+									<div class="login-header margin-bottom-30">
+										<h2>Login to your account</h2>
+									</div>
+									<div class="input-group margin-bottom-20">
+										<span class="input-group-addon">
+											<i class="fa fa-user"></i>
+										</span>
+										<input placeholder="Username" class="form-control" type="text">
+									</div>
+									<div class="input-group margin-bottom-20">
+										<span class="input-group-addon">
+											<i class="fa fa-lock"></i>
+										</span>
+										<input placeholder="Password" class="form-control" type="password">
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+										</div>
+										<div class="col-md-6">
+											<button class="btn btn-primary pull-right" type="submit">Login</button>
+										</div>
+									</div>
+								</form>
 							</div>
-							<div class="form-group input-group">
-								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-								<input type="password" class="form-control"placeholder="Your Password" />
-							</div>
-							
-							<a href="index.html" class="btn btn-primary ">Login Now</a>
-							<hr />
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
+			
+			@include('layouts.main-layout-footer')
 		</div>
 	</body>
 </html>
