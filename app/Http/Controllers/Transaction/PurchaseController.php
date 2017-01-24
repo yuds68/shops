@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class PurchaseController extends Controller {
 
 	public function getIndex(){
-		return view('transaction.purchase');
+		return view('transaction.purchase.purchase');
 	}
 }

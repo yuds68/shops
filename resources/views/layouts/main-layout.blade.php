@@ -12,6 +12,7 @@
 			<div id="content">
 				<div class="container background-white">
 					<div class="row margin-vert-40">
+						@include('layouts.message')
 						@yield('content')
 					</div>
 				</div>

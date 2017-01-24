@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class ReceivableReportController extends Controller {
 
 	public function getIndex(){
-		return view('report.receivable-report');
+		return view('report.receivablereport.receivable-report');
 	}
 }

@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class ReceivablePaymentController extends Controller {
 
 	public function getIndex(){
-		return view('transaction.receivable-payment');
+		return view('transaction.receivablepayment.receivable-payment');
 	}
 }

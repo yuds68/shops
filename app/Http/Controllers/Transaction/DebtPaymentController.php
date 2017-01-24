@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class DebtPaymentController extends Controller {
 
 	public function getIndex(){
-		return view('transaction.debt-payment');
+		return view('transaction.debtpayment.debt-payment');
 	}
 }

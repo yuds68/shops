@@ -15,40 +15,26 @@ Route::get('/', function () {
 	return view('main.main-page');
 });
 
-Route::get('/master', function () {
-	return view('master.master');
-});
-
-Route::get('/parameter', function () {
-	return view('parameter.parameter');
-});
-
-Route::get('/transaction', function () {
-	return view('transaction.transaction');
-});
-
-Route::get('/report', function () {
-	return view('report.report');
-});
-
+Route::controller('user', 'Master\UserController');
 Route::controller('customer', 'Master\CustomerController');
 Route::controller('goods', 'Master\GoodsController');
 Route::controller('supplier', 'Master\SupplierController');
 
-Route::controller('customer-group', 'Parameter\CustomerGroupController');
-Route::controller('sell-price', 'Parameter\SellPriceController');
-
 Route::controller('adjustment-minus', 'Transaction\AdjustmentMinusController');
 Route::controller('adjustment-plus', 'Transaction\AdjustmentPlusController');
 Route::controller('debt-payment', 'Transaction\DebtPaymentController');
-Route::controller('goods-receivable', 'Transaction\GoodsReceiptController');
+Route::controller('goods-delivery', 'Transaction\GoodsDeliveryController');
+Route::controller('goods-receipt', 'Transaction\GoodsReceiptController');
 Route::controller('purchase', 'Transaction\PurchaseController');
 Route::controller('receivable-payment', 'Transaction\ReceivablePaymentController');
-Route::controller('sell', 'Transaction\SellController');
+Route::controller('sale', 'Transaction\SaleController');
 Route::controller('stock-opname', 'Transaction\StockOpnameController');
 
 Route::controller('debt-report', 'Report\DebtReportController');
 Route::controller('purchase-report', 'Report\PurchaseReportController');
 Route::controller('receivable-report', 'Report\ReceivableReportController');
-Route::controller('sell-report', 'Report\SellReportController');
-// Route::controller('barang', 'Master\Barang\BarangController');
+Route::controller('sale-report', 'Report\SaleReportController');
+
+Route::get('password', function(){
+	echo Hash::make('yuds12345');
+});

@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class GoodsReceiptController extends Controller {
 
 	public function getIndex(){
-		return view('transaction.goods-receipt');
+		return view('transaction.goodsreceipt.goods-receipt');
 	}
 }

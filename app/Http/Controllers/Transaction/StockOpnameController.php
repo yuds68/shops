@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class StockOpnameController extends Controller {
 
 	public function getIndex(){
-		return view('transaction.stock-opname');
+		return view('transaction.stockopname.stock-opname');
 	}
 }

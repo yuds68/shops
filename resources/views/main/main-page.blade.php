@@ -15,7 +15,7 @@
 							<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
 								<form class="login-page">
 									<div class="login-header margin-bottom-30">
-										<h2>Login to your account</h2>
+										<h2>Login</h2>
 									</div>
 									<div class="input-group margin-bottom-20">
 										<span class="input-group-addon">

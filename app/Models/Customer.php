@@ -1,26 +1,29 @@
 <?php namespace App\Models;
 
-use Input, Auth;
+use Input;
 use Illuminate\Database\Eloquent\Model;
-use DateTime;
 use App\Emodel;
 use Validator;
 
-class TourAlbum extends Emodel {
+class Customer extends Emodel {
 	
-	protected $table = 'TR0030';
+	protected $table = 'MST003';
 
 	public static function rules($data) {
 		$error = array();
 		
 		$rules = array(
-			'title'		=> 'required',
-			'photo'		=> 'required',
+			'kode_customer'	=> 'required',
+			'nama_customer'	=> 'required',
+			'alamat'		=> 'required',
+			'no_telp'		=> 'required',
 		);
 
 		$messages = array(
-			'title.required'	=> 'Title is required',
-			'photo.required'	=> 'File photo must be uploaded',
+			'kode_customer.required'	=> 'Kode Customer harus di isi',
+			'nama_customer.required'	=> 'Nama Customer harus di isi',
+			'alamat.required'			=> 'Alamat harus di isi',
+			'no_telp.required'			=> 'No Telp harus di isi',
 		);
 		
 		$v = Validator::make($data, $rules, $messages);
@@ -33,21 +36,12 @@ class TourAlbum extends Emodel {
 	}
 
 	public function doParams($object, $data) {
-		$object->mst001_id		= Auth::user()->id;
-		$object->line_number	= $this->getMaxLineNumber();
-		$object->title			= $data['title'];
-		$object->photo			= $data['photo']->getClientOriginalName();
+		$object->kode_customer	= $data['kode_customer'];
+		$object->nama_customer	= $data['nama_customer'];
+		$object->alamat			= $data['alamat'];
+		$object->no_telp		= $data['no_telp'];
+		$object->status			= $data['status'];
 		
 		return $object;
-	}
-
-	private function getMaxLineNumber() {
-		$result = TourAlbum::where('mst001_id', '=', Auth::user()->id)->max('line_number');
-		
-		if(isset($result)) {
-			return $result+=1;
-		}
-
-		return 1;
 	}
 }

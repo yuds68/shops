@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class DebtReportController extends Controller {
 
 	public function getIndex(){
-		return view('report.Debt-report');
+		return view('report.debtreport.debt-report');
 	}
 }

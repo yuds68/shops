@@ -7,6 +7,6 @@ use App\Http\Controllers\Controller;
 class AdjustmentPlusController extends Controller {
 
 	public function getIndex(){
-		return view('transaction.adjustment-plus');
+		return view('transaction.adjustmentplus.adjustment-plus');
 	}
 }
